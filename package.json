@@ -1,0 +1,18 @@
+{
+  "name": "sweep",
+  "version": "1.0.0",
+  "description": "A fullstack example of a pnpm workspace.",
+  "main": "index.js",
+  "scripts": {
+    "heroku-prebuild": "node ./frontend/prebuild.js",
+    "start": "pnpm --stream -r start",
+    "start:dev": "pnpm --stream -r run start:dev",
+    "start:front": "pnpm --filter ./frontend run start:dev",
+    "start:back": "pnpm --filter ./backend run start:dev",
+    "lint:fix": "pnpm --filter ./frontend run lint:fix",
+    "postinstall": "pnpm --stream -r postinstall",
+    "heroku-postbuild": "pnpm --stream -r build",
+    "migrate": "pnpm --filter ./database run migrate"
+  },
+  "keywords": []
+}
